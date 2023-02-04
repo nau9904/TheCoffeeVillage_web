@@ -8,7 +8,6 @@ const { extname } = require('path');
 const app = express();
 const port = 3300;
 
-// change
 
 // Morgan
 // app.use(morgan('combined'))
@@ -25,8 +24,20 @@ app.get('/', function (req, res) {
     res.render('home');
 });
 
-app.get('/new', function (req, res) {
-    res.render('new');
+app.get('/about', function (req, res) {
+    res.render('about');
+});
+
+app.get('/menu', function (req, res) {
+  res.render('menu');
+});
+
+app.get('/store', function (req, res) {
+  res.render('store');
+});
+
+app.get('/order', function (req, res) {
+  res.render('order');
 });
 
 
