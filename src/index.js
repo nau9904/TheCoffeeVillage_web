@@ -5,8 +5,13 @@ const express = require('express');
 const morgan = require('morgan')
 const handlebars  = require('express-handlebars');
 const { extname } = require('path');
+const mongoose = require('mongoose');
+const Menu = require('./models/menu');
+const User = require('./models/user');
 const app = express();
 const port = 3300;
+
+const route = require('./routes');
 
 
 // Morgan
@@ -18,27 +23,22 @@ app.engine('.hbs', handlebars.engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
+// Database connect
+mongoose.connect('mongodb://localhost:27017/villagecoffeDB', {useNewUrlParser: true});
 
-// Routes
-app.get('/', function (req, res) {
-    res.render('home');
-});
+// app.get('/order', (req, res) => {
+//   Menu.find({}, function(error, menu) {
+//     console.log(menu);
+//     res.render('order', {
+//       menus: menu
+//     });
+//   });
+// });
 
-app.get('/about', function (req, res) {
-    res.render('about');
-});
 
-app.get('/menu', function (req, res) {
-  res.render('menu');
-});
+// Routes init
+route(app);
 
-app.get('/store', function (req, res) {
-  res.render('store');
-});
-
-app.get('/order', function (req, res) {
-  res.render('order');
-});
 
 
 app.listen(port, () => {
