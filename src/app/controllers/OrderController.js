@@ -1,9 +1,17 @@
+const { json } = require('express');
+const Menu = require('../models/menu');
+
 
 class OrderController {
 
-    //[GET] /about
-    order(req, res) {
-        res.render('order');
+    //[GET] /order
+    order(req, res, next) {
+        Menu.find({})
+            .then(menus => {
+                menus = menus.map(menu => menu.toObject())
+                res.render('order', { menus })
+            })
+            .catch(next);
     }
 }
 

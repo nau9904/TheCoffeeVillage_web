@@ -185,6 +185,19 @@ h4, .h4 {
   background-position: 10px 50%;
 }
 
+.card {
+  margin: 20px;
+}
+.submit-form {
+  margin: 50px;
+  padding: 50px;
+  background-color: white;
+
+}
+.form-group {
+  margin: 10px;
+}
+
 /*contact form*/
 /*icons*/
 li.icon-facebook {

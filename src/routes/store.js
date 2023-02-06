@@ -6,6 +6,6 @@ const storeController = require('../app/controllers/StoreController');
 
 
 // Final
-router.use('/', storeController.store);
+router.get('/', storeController.store);
 
 module.exports = router;

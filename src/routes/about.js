@@ -6,6 +6,6 @@ const aboutController = require('../app/controllers/AboutController');
 
 
 // Final
-router.use('/', aboutController.about);
+router.get('/', aboutController.about);
 
 module.exports = router;
