@@ -184,9 +184,21 @@ h4, .h4 {
   background-size: 22px;
   background-position: 10px 50%;
 }
+/* Home sceen image */
+
+
+
 
 .card {
   margin: 20px;
+}
+.card-image {
+  height: 50%;
+  margin-top: 10px;
+}
+.card-img-top {
+  width: 100%;
+  height: 100%;
 }
 .submit-form {
   margin: 50px;
@@ -11573,9 +11585,246 @@ p {
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
   z-index: -1;
 }
+/* Login */
+.login-box {
+  position: relative;
+  top: 200px;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+/* ------------------- */
+/* Sig-up */
+.signup{
+  width: 600px;
+  margin: 80px auto;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.signup > h1{
+  text-align: center;
+  font-size: 33px;
+  color: #757575;
+  font-weight: 300;
+}
+.signup > input{
+  display: block;
+}
+
+.signup .row input,
+.signup .row input{
+  float: left;
+  width: 43%;
+  margin-left: 8px;
+}
+.signup input{
+  height: 50px;
+  display: block;
+  padding: 10px 10px 0px 10px;
+  border: none;
+  border-bottom: 2px solid #ebebeb;
+  margin-left: 9px;
+  margin-top: 10px;
+  width: 257px;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.signup input:hover{
+  border-bottom-color: #dcdcdc;
+}
+.signup input:focus{
+  outline: none;
+  border-bottom-color: #58c791;
+}
+.signup input[type=submit]{
+  position: relative;
+  margin: 37px auto;
+  position: relative;
+  height: 50px;
+  display: block;
+  border-radius:5px;
+  border: none;
+  background-color: #58c791;
+  color:#fff;
+  font-size: 23px;
+  padding: 0;
+  box-shadow: 0 5px 0 #3aad73;
+}
+.signup input[type=submit]:hover{
+  top: 2px;
+  box-shadow: 0 3px 0 #3aad73;
+  cursor: pointer;
+}
+.signup input[type=submit]:active{
+  top:5px;
+  box-shadow: none;
+}
+
+.dropdown-item {
+  color: white;
+  background-color: brown;
+  opacity: 0.8;
+}
+.order-card {
+  margin-top: 50px;
+  margin-left: 80px;
+}
 
 .footer {
   background-color: rgba(47, 23, 15, 0.9);
+  margin-top: 50px;
 }
 
 .intro {

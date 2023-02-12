@@ -1,17 +1,19 @@
 const { json } = require('express');
-const Menu = require('../models/menu');
+const { mutipleMongooseToObject } = require('../../util/mongoose');
+const Order = require('../models/csOrder');
 
 
 class OrderController {
 
     //[GET] /order
     order(req, res, next) {
-        Menu.find({})
-            .then(menus => {
-                menus = menus.map(menu => menu.toObject())
-                res.render('order', { menus })
+        Order.find({})
+            .then((orders) => {
+                res.render('order',{
+                    orders: mutipleMongooseToObject(orders)
+                })
             })
-            .catch(next);
+            .catch(next)
     }
 }
 

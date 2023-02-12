@@ -1,5 +1,6 @@
 const { json } = require('express');
 const Menu = require('../models/menu');
+const Order = require('../models/csOrder');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
 const bodyParser = require('body-parser');
@@ -28,17 +29,40 @@ class MenuController {
             .catch(next);
      }
 
+
     //[GET] /menu/addmenu
     addmenu(req, res, next) {
         res.render('menus/addMenu')
     }
 
-    //[GET] /menu/store
+    //[POST] /menu/store
     store(req, res, next) {
-        console.log(req.body)
         Menu.create(req.body)
-            .then(res.redirect('/'))
+            .then(res.redirect('back'))
+            .catch(next)
     }
+    //[POST] /menu/:id
+    
+    order(req, res, next) {
+        Menu.findById({_id: req.params.id})
+            .then((menus) => {
+                Order.create(
+                    {name: menus.name ,
+                    type: menus.type,
+                    image: menus.image,
+                    prices: menus.prices,
+                    details: menus.details}
+                )
+                    .then(() => {
+                        res.redirect('back')
+                    })
+                    .catch(next)
+            })
+            .catch(next)
+
+        Menu.fin
+    }
+
 }
  
 module.exports = new MenuController;

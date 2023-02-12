@@ -8,17 +8,59 @@
     <div class="row">
         {{#each menus}}
         <div class="card" style="width: 18rem;">
-            <a href="/menu/{{this.name}}">
+            <div class="card-image">
+                <a href="/menu/{{this.name}}">
                 <img src="{{this.image}}" class="card-img-top" alt="...">
             </a>
-            <div class="card-body">
-                <h4 class="card-title">{{this.name}}</h4>
-                <p class="menu-prices">{{this.type}} - {{this.prices}}$</p>
-                <p class="card-text">{{this.details}}</p>
-                <a href="/menu/{{this.name}}" class="btn btn-primary">Go Details</a>
-                <button type="button" class="btn btn-outline-primary " id="order-btn">Order</button>
             </div>
+                <div class="card-body">
+                    <h4 class="card-title">{{this.name}}</h4>
+                    <p class="menu-prices">{{this.type}} - {{this.prices}}$</p>
+                    <p class="card-text">{{this.details}}</p>
+                    <a href="/menu/{{this.name}}" class="btn btn-primary">Go Details</a>
+                    <button type="button" class="btn btn-outline-primary" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#order-modal">Order</button>
+                </div>
         </div>
         {{/each}}
     </div>
 </div>
+{{!-- Order hidden form --}}
+<form name="order-hidden-form" method="POST" action="/menu/{{menus._id}}"></form>
+
+{{!-- Confirm Order --}}
+<div class="modal" tabindex="-1" id="order-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Order Check</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>You want to order this one?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btn-order">Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var menuId;
+        var orderHiddenForm = document.forms['order-hidden-form'];
+        var btnOrder = document.getElementById('btn-order');
+        
+
+        $('#order-modal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            menuId = button.data('id');
+        });
+
+        btnOrder.onclick = function() {
+           orderHiddenForm.action = '/menu/' + menuId;
+           orderHiddenForm.submit();
+        }
+    });
+</script>

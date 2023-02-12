@@ -5,7 +5,7 @@ async function connect() {
     try {
         await mongoose.connect('mongodb://localhost:27017/villagecoffeDB', {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
         });
         console.log(' DB Connect Successfully!');
     } catch (error) {

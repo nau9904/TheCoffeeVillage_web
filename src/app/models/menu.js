@@ -4,7 +4,9 @@ const MenuSchema = new Schema({
     name: String,
     type: String,
     prices: Number,
+    image: String,
     details: String,
+    slug: String,
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
 });
