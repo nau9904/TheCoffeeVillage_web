@@ -4,7 +4,7 @@ const router = express.Router();
 const customerController = require('../app/controllers/CustomerController');
 
 router.get('/login', customerController.login);
-router.get('/sigin', customerController.sigin)
+router.get('/signin', customerController.sigin)
 router.get('/shopowner', customerController.owner)
 
 

@@ -1,4 +1,5 @@
 const siteRoute = require('./site');
+const meRoute = require('./me');
 const aboutRoute = require('./about');
 const menuRoute = require('./menus');
 const storeRoute = require('./store');
@@ -9,6 +10,8 @@ const customerRoute = require('./customer');
 function route(app) {
     
     app.use('/about', aboutRoute);
+
+    app.use('/me', meRoute);
     
     app.use('/menu', menuRoute);
     

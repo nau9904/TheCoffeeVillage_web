@@ -1,8 +1,16 @@
 
 <div class="mt-4">
-    <h2>
-        <a href="menu/addmenu" class="badge badge-success">Add Menu</a>
-    </h2>
+  <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Make Menu
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/menu/addmenu">Create Menu</a></li>
+    <li><a class="dropdown-item" href="/me/stored">Menu List</a></li>
+  </ul>
+</div>
+    
 </div>
 <div class="mt-3">
     <div class="row">
@@ -16,8 +24,8 @@
                 <div class="card-body">
                     <h4 class="card-title">{{this.name}}</h4>
                     <p class="menu-prices">{{this.type}} - {{this.prices}}$</p>
-                    <p class="card-text">{{this.details}}</p>
-                    <a href="/menu/{{this.name}}" class="btn btn-primary">Go Details</a>
+                    <p class="card-text" style="text-overflow: ellipsis; overflow: hidden;">{{this.details}}</p>
+                    <a  href="/menu/{{this.name}}" class="btn btn-primary">Go Details</a>
                     <button type="button" class="btn btn-outline-primary" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#order-modal">Order</button>
                 </div>
         </div>

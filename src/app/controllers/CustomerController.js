@@ -8,7 +8,7 @@ class CustomerController {
 
     //[GET] /customer/sigin
     sigin(req, res, next) {
-        res.render('customers/sigin');
+        res.render('customers/signin');
     }
 
     //[GET] /customer/shopowner

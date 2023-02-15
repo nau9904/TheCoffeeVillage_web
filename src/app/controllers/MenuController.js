@@ -59,8 +59,6 @@ class MenuController {
                     .catch(next)
             })
             .catch(next)
-
-        Menu.fin
     }
 
 }

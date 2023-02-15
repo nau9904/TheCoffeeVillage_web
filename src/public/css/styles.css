@@ -805,6 +805,7 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+  
 }
 
 @media (min-width: 576px) {
@@ -4105,7 +4106,7 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   list-style: none;
 }
 
@@ -11586,6 +11587,10 @@ p {
   z-index: -1;
 }
 /* Login */
+.shop-owner-login-box {
+  padding-top: 50px;
+}
+
 .login-box {
   position: relative;
   top: 200px;
@@ -11597,6 +11602,7 @@ p {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
+  margin-top: 80px;
 }
 
 .login-box h2 {
