@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 
 async function connect() {
+    mongoose.set("strictQuery", false);
+
     try {
         await mongoose.connect('mongodb://localhost:27017/villagecoffeDB', {
             useNewUrlParser: true,
