@@ -209,6 +209,13 @@ h4, .h4 {
 .form-group {
   margin: 10px;
 }
+/* Order Delete Button */
+/* .order-delete {
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+} */
 
 /*contact form*/
 /*icons*/

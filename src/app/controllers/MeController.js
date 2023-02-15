@@ -6,8 +6,14 @@ const bodyParser = require('body-parser');
 
 class MeController {
     //[GET] /me/stored/menu
-    storedMenu(req, res) {
-        res.render('me/stored-menu')
+    storedMenu(req, res, next) {
+        Menu.find({})
+            .then(menus => {
+                res.render('me/stored-menu', {
+                    menus: mutipleMongooseToObject(menus)
+                })
+            })
+            .catch(next)
     }
 
 }

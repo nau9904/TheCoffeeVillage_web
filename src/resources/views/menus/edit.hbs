@@ -1,0 +1,27 @@
+   
+   
+    <div class="submit-form">
+        <form method="POST" action="/menu/{{menus._id}}?_method=PUT">
+            <div class="form-group">
+                <label for="name">Item Name</label>
+                <input type="text" class="form-control" value="{{menus.name}}" id="exampleInputEmail1" name="name">
+            </div>
+            <div class="form-group">
+                <label for="type">Item Type</label>
+                <input type="text" class="form-control" value="{{menus.type}}" id="exampleInputItemType" name="type">
+            </div>
+            <div class="form-group">
+                <label for="prices">Prices</label>
+                <input type="text" class="form-control" value="{{menus.prices}}" id="exampleInputPrices" name="prices">
+            </div>
+            <div class="form-group">
+                <label for="details">Details</label>
+                <textarea class="form-control"id="exampleFormControlTextarea1" name="details" rows="3">{{menus.details}}</textarea>
+            </div>
+            </br>
+            
+
+            <br><br>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Save Menu</button>
+        </form>
+    </div>

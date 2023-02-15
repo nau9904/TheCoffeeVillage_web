@@ -35,10 +35,36 @@ class MenuController {
         res.render('menus/addMenu')
     }
 
+    //[GET] /menus/:id/edit
+    edit(req, res, next) {
+        Menu.findById(req.params.id)
+            .then(menus => {
+                res.render('menus/edit', {
+                    menus: mongooseToObject(menus)
+                })
+            })
+            .catch(next)
+        
+    }
+
+    //[PUT] /menu/:id/edit
+    update(req, res, next) {
+        Menu.updateOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('/me/stored'))
+            .catch(next)
+    }
+
+    //[DELETE] /menu/:id
+    delete(req, res, next) {
+        Menu.deleteOne({_id: req.params.id})
+            .then(() => res.redirect('back'))
+            .catch(next);
+    }
+
     //[POST] /menu/store
     store(req, res, next) {
         Menu.create(req.body)
-            .then(res.redirect('back'))
+            .then(res.redirect('/menu'))
             .catch(next)
     }
     //[POST] /menu/:id
