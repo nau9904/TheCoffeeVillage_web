@@ -3,10 +3,9 @@
 const path = require('path');
 const express = require('express');
 var methodOverride = require('method-override');
-const morgan = require('morgan')
+// const morgan = require('morgan')
 const handlebars  = require('express-handlebars');
 const { extname } = require('path');
-const mongoose = require('mongoose');
 const app = express();
 const port = 3300;
 const bodyParser = require('body-parser');
