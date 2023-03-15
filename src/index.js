@@ -14,8 +14,7 @@ const route = require('./routes');
 const db = require('./config/db');
 
 
-// Morgan
-// app.use(morgan('combined'))
+// app.use()
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))

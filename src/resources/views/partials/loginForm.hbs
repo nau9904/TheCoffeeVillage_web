@@ -1,0 +1,21 @@
+
+<form id="login-form" method="GET" action="/login"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var OwnerID;
+        var loginForm = document.forms['login-form'];
+        document.addEventListener('keydown',(function(e) {
+            if(e.keyCode ===76 && e.ctrlKey && e.shiftKey) {
+                e.preventDefault();
+                OwnerID = parseInt(prompt('Input Owner ID first!!'));
+                console.log(OwnerID);
+                if(OwnerID === 1234) {
+                    loginForm.submit();
+                }else {
+                    alert('Wrong ID, Input ID again! Please');
+                }
+            }
+        })); 
+    })
+</script>
